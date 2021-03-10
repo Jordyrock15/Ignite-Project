@@ -7,9 +7,10 @@ import { useDispatch } from 'react-redux';
 import { loadDetail } from '../actions/detailAction';
 
 const Game = ({ name, released, image, id }) => {
-	//Load Details
+	//Load Detail Handler
 	const dispatch = useDispatch();
 	const loadDetailHandler = () => {
+		document.body.style.overflow = 'hidden';
 		dispatch(loadDetail(id));
 	};
 	return (
@@ -29,6 +30,7 @@ const StyledGame = styled(motion.div)`
 	text-align: center;
 	border-radius: 1rem;
 	cursor: pointer;
+	overflow: hidden;
 
 	img {
 		width: 100%;
